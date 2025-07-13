@@ -21,10 +21,12 @@ async function testing(prompt){
     return result;
 }
 
+app.get("", async(req, res)=>{
+    res.send("hello")
+})
 
 
-
-app.get("/",async (req, res)=>{
+app.get("/aibackend",async (req, res)=>{
     const {instructions, uri, Schemaname} = req.body
     const prompt = {
         instructions: instructions,
