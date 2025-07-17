@@ -15,6 +15,7 @@ async function testing(prompt){
     const configdata = await promptIdentifier(prompt);
     setBasic(configdata);
     const Model = createDynamicModel(configdata.schemaName, configdata.schemaStructure);
+    console.log(basic.MongoDbURI)
     await connectToDatabase(basic.MongoDbURI);
     const result = await crudOperation(configdata.operation, Model, configdata.key, configdata.data);
     console.log(result)
