@@ -26,7 +26,7 @@ app.get("", async(req, res)=>{
 })
 
 
-app.get("/aibackend",async (req, res)=>{
+app.post("/aibackend",async (req, res)=>{
     const {instructions, uri, Schemaname} = req.body
     const prompt = {
         instructions: instructions,
